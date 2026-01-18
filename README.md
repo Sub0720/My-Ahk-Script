@@ -1,51 +1,103 @@
-# Smart AutoHotkey Automation Script ⚡
+# Smart.ahk — Feature summary (for GitHub README)
 
-A powerful and customizable **AutoHotkey (AHK) automation script** designed to enhance productivity by optimizing keyboard and mouse interactions. This script simplifies repetitive tasks, improves workflow speed, and enables advanced hotkey-driven control for daily desktop usage.
+**Version:** 1.0.0
 
-The project leverages AutoHotkey’s event-driven scripting capabilities to provide responsive automation logic, configurable timing behavior, and intelligent input handling. It is lightweight, efficient, and fully customizable for personal or professional automation needs.
+**Short description**
+A single-file AutoHotkey toolkit that provides global hotkeys, a lightweight autoclicker, extensive text-expansion / autocorrect hotstrings, quick utility hotkeys (close window, date/time insert), simple volume controls and a few small window/app-switch helpers. Designed to run as a single script with auto-elevation when required and an emergency suspend/exit.
 
-## ✨ Features
+---
 
-- Custom keyboard hotkeys for fast task execution
-- Mouse interaction automation for improved navigation efficiency
-- Smart input detection and event-driven triggers
-- Configurable delay and timing control for precise automation
-- Real-time feedback using tooltips or status indicators
-- Modular logic structure for easy customization and expansion
-- Lightweight and fast execution with minimal system overhead
-- Conflict-aware key handling to avoid interference with applications
-- Clean and readable code structure for easy maintenance
-- Fully offline — no internet or external dependencies required
+## Key features (concise)
 
-## 🔒 Privacy & Security
+- **Global suspend toggle** — `F12` toggles Suspend (disables all hotkeys while on).
+- **Exit script** — `Win + Shift + Q` (`#+q`) prompts to close the script.
+- **AutoClicker** — Toggle left/right autoclick:
+  - `Win + Alt + Left` (`#!Left`) — toggle left auto-clicker (uses a `SetTimer` sending `Click, left`).
+  - `Win + Alt + Right` (`#!Right`) — toggle right auto-clicker (uses a `SetTimer` sending `Click, right`).
+- **Close active window** — `Insert` closes the currently active window.
+- **Quick app/window switch helpers**
+  - `Right Ctrl` (`RControl`) — sends `Ctrl up` then `!{Tab}` (used to perform a quick app switch action).
+  - `Right Alt` (`RAlt`) — toggles sending `Alt+W` (custom toggle behavior).
+- **Volume controls** (convenient without focusing a media app)
+  - `Alt + WheelUp` — Volume Up
+  - `Alt + WheelDown` — Volume Down
+  - `Alt + Middle-button` — Toggle Mute
+- **Date & time hotstrings**
+  - `;date` → inserts current date formatted `dd:MM:yyyy`
+  - `;time` → inserts current time formatted `hh:mm:ss tt`
+- **Auto-elevate** — script attempts to auto-run elevated (Run *RunAs) when not started as administrator.
+- **Game exclusions** — the script uses `#IfWinNotActive` to avoid interfering with certain games (e.g., `javaw.exe` (Minecraft), `valorant.exe`, `csgo.exe`).
+- **Massive hotstring set** — ~**4960** hotstrings (auto-corrections, contractions, shorthand expansions, common phrases). These cover:
+  - Common contractions and shorthand (`idk` → `I don't know`, `brb` → `be right back`, `ty` → `thank you`, etc.)
+  - HTTP shortcuts (`http:\\\` → `http://`, `htp` → `http:`)
+  - Spelling corrections (`accomodate` → `accommodate`, etc.)
+  - Punctuation and small snippets
+- **Tooltips and brief UI feedback** — toggles show `ToolTip` feedback and timers remove tooltips automatically.
 
-- No data collection or logging
-- No passwords, tokens, or credentials stored
-- No network communication or API usage
-- No user-specific hardcoded paths or identifiers
-- Safe for open-source sharing and public distribution
+---
 
-## 🎯 Use Cases
+## Shortcuts / Hotkeys (exact mappings found in the script)
 
-- Speed up repetitive desktop tasks
-- Create personalized keyboard shortcuts
-- Improve workflow efficiency for developers and power users
-- Learn practical AutoHotkey scripting techniques
-- Customize system-level input behavior
+- `F12`  
+  Toggle full suspend mode (disables all hotkeys).
+- `Win + Shift + Q` (`#+q`)  
+  Prompt and exit script.
+- `Win + Alt + Left` (`#!Left`)  
+  Toggle LEFT AutoClick (uses `SetTimer LeftClick`).
+- `Win + Alt + Right` (`#!Right`)  
+  Toggle RIGHT AutoClick (uses `SetTimer RightClick`).
+- `Insert`  
+  If not paused, closes the active window (`WinGet` + `WinClose`).
+- `Right Alt` (`RAlt`)  
+  Toggle that sends `!w` (Alt+W) when toggled ON.
+- `Right Ctrl` (`RControl`)  
+  Sends `{Ctrl up}!{Tab}` — a quick app switch helper (releases Ctrl then does Alt+Tab).
+- `Alt + WheelUp`  
+  Volume up (mapped to `Volume_Up`).
+- `Alt + WheelDown`  
+  Volume down (mapped to `Volume_Down`).
+- `Alt + Middle Mouse Button` (`Alt & MButton`)  
+  Volume mute toggle.
 
-## ⚙️ Customization
+Hotstrings of note:
+- `;date` → inserts the date in `dd:MM:yyyy`.
+- `;time` → inserts time in `hh:mm:ss tt`.
+- `::http:\\\\::http://` and `::htp:::http:` — quick fixes/shortcuts for URLs.
+- A very large set (~4960) of autocorrections, contractions, and common shorthand (e.g., `brb`, `idk`, `ty`, `dw`, many misspellings corrected to proper spelling).
 
-You can easily modify or extend the script to:
-- Add new hotkeys
-- Change automation behavior
-- Adjust timing and responsiveness
-- Integrate additional workflows
+---
 
-## 📦 Requirements
+## Installation / Usage
 
-- AutoHotkey v1 or v2 (depending on script compatibility)
-- Windows operating system
+1. Install AutoHotkey (v1.x) if not already installed.
+2. Place `Smart.ahk` in your preferred folder.
+3. Run the script (double-click). If not started as admin, the script attempts to auto-elevate.
+4. Use `F12` to suspend/resume all hotkeys. Use `Win+Shift+Q` to exit.
 
-## 📄 License
+---
 
-This project is open-source and free to use, modify, and distribute.
+## Notes about privacy / credentials
+I parsed the script for obvious personal identifiers (email addresses, phone-like numbers, `C:\Users\YourName` patterns, API keys, passwords, or plaintext credentials). No email addresses or phone numbers or obvious personal credentials were found in the file. The script appears to contain only hotkey logic and many hotstrings (autocorrects). **Nevertheless:** review the script yourself for any inserted text snippets you might consider private before publishing—hotstrings can contain pasted phrases and signatures that may be sensitive.
+
+---
+
+## Recommended README snippet (copy-paste friendly)
+
+Below is a short copy-paste-ready README section you can drop into your GitHub repo's `README.md`:
+
+```md
+# Smart.ahk
+
+**Version:** 1.0.0
+
+Smart.ahk is a compact AutoHotkey script that adds system-wide productivity helpers:
+- Global suspend (`F12`)
+- Script exit (`Win+Shift+Q`)
+- Left/right autoclick toggles (`Win+Alt+Left` / `Win+Alt+Right`)
+- Close active window (`Insert`)
+- Volume control via `Alt + mouse wheel` and `Alt + middle-click`
+- Date/time hotstrings (`;date`, `;time`)
+- ~4960 autocorrect & shorthand hotstrings for fast typing
+- Auto-elevates to admin and avoids certain game windows
+
+**Usage:** Install AutoHotkey, run `Smart.ahk`, toggle features with the keys above.
