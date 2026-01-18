@@ -1,6 +1,4 @@
-# Smart.ahk — Feature summary (for GitHub README)
-
-**Version:** 1.0.0
+# Smart.ahk 
 
 **Short description**
 A single-file AutoHotkey toolkit that provides global hotkeys, a lightweight autoclicker, extensive text-expansion / autocorrect hotstrings, quick utility hotkeys (close window, date/time insert), simple volume controls and a few small window/app-switch helpers. Designed to run as a single script with auto-elevation when required and an emergency suspend/exit.
