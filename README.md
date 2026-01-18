@@ -73,31 +73,3 @@ Hotstrings of note:
 2. Place `Smart.ahk` in your preferred folder.
 3. Run the script (double-click). If not started as admin, the script attempts to auto-elevate.
 4. Use `F12` to suspend/resume all hotkeys. Use `Win+Shift+Q` to exit.
-
----
-
-## Notes about privacy / credentials
-I parsed the script for obvious personal identifiers (email addresses, phone-like numbers, `C:\Users\YourName` patterns, API keys, passwords, or plaintext credentials). No email addresses or phone numbers or obvious personal credentials were found in the file. The script appears to contain only hotkey logic and many hotstrings (autocorrects). **Nevertheless:** review the script yourself for any inserted text snippets you might consider private before publishing—hotstrings can contain pasted phrases and signatures that may be sensitive.
-
----
-
-## Recommended README snippet (copy-paste friendly)
-
-Below is a short copy-paste-ready README section you can drop into your GitHub repo's `README.md`:
-
-```md
-# Smart.ahk
-
-**Version:** 1.0.0
-
-Smart.ahk is a compact AutoHotkey script that adds system-wide productivity helpers:
-- Global suspend (`F12`)
-- Script exit (`Win+Shift+Q`)
-- Left/right autoclick toggles (`Win+Alt+Left` / `Win+Alt+Right`)
-- Close active window (`Insert`)
-- Volume control via `Alt + mouse wheel` and `Alt + middle-click`
-- Date/time hotstrings (`;date`, `;time`)
-- ~4960 autocorrect & shorthand hotstrings for fast typing
-- Auto-elevates to admin and avoids certain game windows
-
-**Usage:** Install AutoHotkey, run `Smart.ahk`, toggle features with the keys above.
