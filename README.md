@@ -1,10 +1,10 @@
-# Smart AutoHotkey Automation Script
+# Smart AutoHotkey Automation Script ⚡
 
 A powerful and customizable **AutoHotkey (AHK) automation script** designed to enhance productivity by optimizing keyboard and mouse interactions. This script simplifies repetitive tasks, improves workflow speed, and enables advanced hotkey-driven control for daily desktop usage.
 
 The project leverages AutoHotkey’s event-driven scripting capabilities to provide responsive automation logic, configurable timing behavior, and intelligent input handling. It is lightweight, efficient, and fully customizable for personal or professional automation needs.
 
-## Features
+## ✨ Features
 
 - Custom keyboard hotkeys for fast task execution
 - Mouse interaction automation for improved navigation efficiency
@@ -17,7 +17,7 @@ The project leverages AutoHotkey’s event-driven scripting capabilities to prov
 - Clean and readable code structure for easy maintenance
 - Fully offline — no internet or external dependencies required
 
-## Privacy & Security
+## 🔒 Privacy & Security
 
 - No data collection or logging
 - No passwords, tokens, or credentials stored
@@ -25,7 +25,7 @@ The project leverages AutoHotkey’s event-driven scripting capabilities to prov
 - No user-specific hardcoded paths or identifiers
 - Safe for open-source sharing and public distribution
 
-## Use Cases
+## 🎯 Use Cases
 
 - Speed up repetitive desktop tasks
 - Create personalized keyboard shortcuts
@@ -33,7 +33,7 @@ The project leverages AutoHotkey’s event-driven scripting capabilities to prov
 - Learn practical AutoHotkey scripting techniques
 - Customize system-level input behavior
 
-## Customization
+## ⚙️ Customization
 
 You can easily modify or extend the script to:
 - Add new hotkeys
@@ -41,11 +41,11 @@ You can easily modify or extend the script to:
 - Adjust timing and responsiveness
 - Integrate additional workflows
 
-## Requirements
+## 📦 Requirements
 
 - AutoHotkey v1 or v2 (depending on script compatibility)
 - Windows operating system
 
-## License
+## 📄 License
 
 This project is open-source and free to use, modify, and distribute.
